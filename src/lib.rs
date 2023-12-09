@@ -1,3 +1,11 @@
+#![allow(dead_code)]
+
+mod error;
+mod models;
+
+pub use error::*;
+pub use models::*;
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
