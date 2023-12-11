@@ -1,5 +1,6 @@
 #![allow(dead_code)]
 
+pub mod crypto;
 mod error;
 mod models;
 

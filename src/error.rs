@@ -4,6 +4,12 @@ use thiserror::Error;
 pub enum Error {
     #[error("Token V3 format")]
     TokenV3(Option<Box<dyn std::error::Error>>),
+
+    #[error("ECC arithmetic error: {0}")]
+    EccArithmetic(#[from] k256::elliptic_curve::Error),
+
+    #[error("Hex conversion")]
+    HexConversion(#[from] hex::FromHexError),
 }
 
 impl Error {
